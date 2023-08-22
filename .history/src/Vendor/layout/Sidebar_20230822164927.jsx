@@ -49,13 +49,6 @@ const Sidebar = ({ hamb, setHamb }) => {
       link: "/vendor/colors",
       name: "Colors",
     },
-    {
-      icon: (
-        <i className="fa-solid fa-user  text-xl mr-3 rounded-full"></i>
-      ),
-      link: "/vendor-order",
-      name: "Order",
-    },
   ];
 
   const logOut = () => {

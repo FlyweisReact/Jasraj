@@ -54,7 +54,7 @@ const Sidebar = ({ hamb, setHamb }) => {
         <i className="fa-solid fa-user  text-xl mr-3 rounded-full"></i>
       ),
       link: "/vendor-order",
-      name: "Order",
+      name: "Colors",
     },
   ];
 

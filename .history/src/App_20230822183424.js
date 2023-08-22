@@ -20,8 +20,6 @@ import Colors from "./Vendor/pages/colors/Colors";
 
 // Admin Panel
 import AdminLogin from "./Admin/forms/AdminLogin";
-import Order from "./Vendor/pages/Order/Order";
-import ViewOrder from "./Vendor/pages/Order/ViewOrder";
 // ----------------
 function App() {
   return (
@@ -49,8 +47,7 @@ function App() {
         <Route path="/product-variant/:id/:name" element={<ProductVariant />} />
         <Route path="/indivisual-varient/:id" element={<IndivisualVarient />} />
         <Route path="/vendor/colors" element={<Colors />} />
-        <Route path="/vendor-order" element={<Order />} />
-        <Route path="/vendor/order/:id" element={<ViewOrder />} />
+        <Route path="/vendor-order"
 
         <Route path="/admin-login" element={<AdminLogin />} />
       </Routes>
