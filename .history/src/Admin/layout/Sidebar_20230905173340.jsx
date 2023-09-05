@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 const Sidebar = ({ hamb, setHamb }) => {
   const navigate = useNavigate();
+  const location = useLocation()
 
   const nav = [
     {

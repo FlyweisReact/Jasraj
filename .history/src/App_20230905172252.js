@@ -2,7 +2,6 @@
 
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-// Vendor Panel
 import Login from "./Vendor/forms/Login";
 import Dashboard from "./Vendor/pages/Dashboard/Dashboard";
 import Product from "./Vendor/pages/Product/Product";

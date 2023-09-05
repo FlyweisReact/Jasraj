@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 const Sidebar = ({ hamb, setHamb }) => {
   const navigate = useNavigate();
+  const location = useLocation()
 
   const nav = [
     {
@@ -108,8 +109,6 @@ const Sidebar = ({ hamb, setHamb }) => {
     toast.success("Logged Out");
   };
 
-
-
   return (
     <>
       <aside
@@ -142,6 +141,7 @@ const Sidebar = ({ hamb, setHamb }) => {
               <Link
                 to={nav.link}
                 key={nav.name}
+                className={location.pathname === nav.}
                 style={{ textDecoration: "none", textTransform: "uppercase" }}
               >
                 <span

@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 const Sidebar = ({ hamb, setHamb }) => {
   const navigate = useNavigate();
+  const location = useLocation()
 
   const nav = [
     {
@@ -142,8 +143,10 @@ const Sidebar = ({ hamb, setHamb }) => {
               <Link
                 to={nav.link}
                 key={nav.name}
+                className={location.pathname === nav.link ? 'ActiveNav' : ""}
                 style={{ textDecoration: "none", textTransform: "uppercase" }}
               >
+              {console.log(nav.link === location.pathname ? true : false , "Link")}
                 <span
                   className="flex my-3 items-center cursor-pointer text-gray-900    tracking-wider p-2 rounded-sm"
                   style={{ color: "#FFF" }}

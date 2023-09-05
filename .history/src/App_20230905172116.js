@@ -2,6 +2,7 @@
 
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // Vendor Panel
 import Login from "./Vendor/forms/Login";
 import Dashboard from "./Vendor/pages/Dashboard/Dashboard";
@@ -57,7 +58,10 @@ function App() {
         pauseOnHover
       />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route
+         path="/"
+         element={<Login />}
+        />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/Category" element={<Category />} />
         <Route path="/SubCategory" element={<SubCategory />} />
@@ -85,8 +89,8 @@ function App() {
         <Route path="/admin/order" element={<AdminOrder />} />
         <Route path="/admin/order/:id" element={<AdminViewOrder />} />
         <Route path="/admin/transaction" element={<Transaction />} />
-        <Route path="/admin/kyc-list" element={<Kyc />} />
-        <Route path="/admin/kyb" element={<Kyb />} />
+        <Route path="/admin/kyc-list" element={<Kyc />} />     
+        <Route path="/admin/kyb" element={<Kyb />} />  
         <Route path="/coupon" element={<Coupon />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/kyb-view/:id" element={<KybView />} />

@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 const Sidebar = ({ hamb, setHamb }) => {
   const navigate = useNavigate();
+  const location = useLocation()
 
   const nav = [
     {
@@ -109,6 +110,7 @@ const Sidebar = ({ hamb, setHamb }) => {
   };
 
 
+  console.log(location.)
 
   return (
     <>
@@ -142,6 +144,7 @@ const Sidebar = ({ hamb, setHamb }) => {
               <Link
                 to={nav.link}
                 key={nav.name}
+                className={location.pathname === nav.link ? 'ActiveNav' : ""}
                 style={{ textDecoration: "none", textTransform: "uppercase" }}
               >
                 <span
