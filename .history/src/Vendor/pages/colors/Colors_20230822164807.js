@@ -191,6 +191,7 @@ const Colors = () => {
         onHide={() => setModalShow(false)}
       />
 
+      <p className="headP">Dashboard / Colors</p>
 
       <div
         className="pb-4  w-full flex justify-between items-center"

@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import axios from "axios";
 
-const Colors = () => {
+const Unit = () => {
   const [data, setData] = useState([]);
   const [total, setTotal] = useState(0);
   const [id, setId] = useState(null);
@@ -36,7 +36,7 @@ const Colors = () => {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `${Baseurl}/api/v1/vendor/Color/list`,
+        `${Baseurl}/api/v1/vendor/QuantityUnit/list`,
         Auth
       );
       setData(data.data);
@@ -53,20 +53,17 @@ const Colors = () => {
   }, []);
 
   function MyVerticallyCenteredModal(props) {
-    const [color, setColor] = useState("");
-    const [colorCode, setColorCode] = useState("");
+    const [unit, setUnit] = useState("");
     const [errMsg, setErrMsg] = useState(null);
     const [submitLoading, setSubmitLoading] = useState(false);
-
-    const payload = { colorCode, color };
 
     const postHandler = async (e) => {
       e.preventDefault();
       setSubmitLoading(true);
       try {
         const { data } = await axios.post(
-          `${Baseurl}/api/v1/vendor/Color/add`,
-          payload ,
+          `${Baseurl}/api/v1/vendor/QuantityUnit/add`,
+          { unit },
           Auth
         );
         toast.success(data.message);
@@ -85,8 +82,8 @@ const Colors = () => {
       setSubmitLoading(true);
       try {
         const { data } = await axios.put(
-          `https://ecommerce-backend-ochre-phi.vercel.app/api/v1/vendor/Color/edit/${id}`,
-          payload,
+          `https://ecommerce-backend-ochre-phi.vercel.app/api/v1/vendor/QuantityUnit/edit/${id}`,
+          { unit },
           Auth
         );
         toast.success(data.message);
@@ -97,6 +94,7 @@ const Colors = () => {
         setSubmitLoading(false);
         const msg = e.response.data.message;
         setErrMsg(msg);
+      
       }
     };
 
@@ -109,7 +107,7 @@ const Colors = () => {
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             {" "}
-            {edit ? `Edit Color` : "Create New"}
+            {edit ? `Edit Unit` : "Create New"}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -124,19 +122,11 @@ const Colors = () => {
 
           <Form onSubmit={edit ? putHandler : postHandler}>
             <Form.Group className="mb-3">
-              <Form.Label>Color Name</Form.Label>
+              <Form.Label>Unit</Form.Label>
               <Form.Control
                 type="text"
                 required
-                onChange={(e) => setColor(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Color Code</Form.Label>
-              <Form.Control
-                type="text"
-                required
-                onChange={(e) => setColorCode(e.target.value)}
+                onChange={(e) => setUnit(e.target.value)}
               />
             </Form.Group>
 
@@ -165,7 +155,7 @@ const Colors = () => {
   const deleteHandler = async (ide) => {
     try {
       const { data } = await axios.delete(
-        `${Baseurl}/api/v1/vendor/Color/delete/${ide}`,
+        `${Baseurl}/api/v1/vendor/QuantityUnit/delete/${ide}`,
         Auth
       );
       toast.success(data.message);
@@ -191,6 +181,7 @@ const Colors = () => {
         onHide={() => setModalShow(false)}
       />
 
+      <p className="headP">Dashboard / Units</p>
 
       <div
         className="pb-4  w-full flex justify-between items-center"
@@ -200,7 +191,7 @@ const Colors = () => {
           className="tracking-widest text-slate-900 font-semibold uppercase"
           style={{ fontSize: "1.5rem" }}
         >
-          All Colors ( Total : {total} )
+          All Unit's ( Total : {total} )
         </span>
         <div className="d-flex gap-1">
           <button
@@ -232,8 +223,7 @@ const Colors = () => {
                   <thead>
                     <tr>
                       <th>SNo.</th>
-                      <th>Color</th>
-                      <th> Colorcode</th>
+                      <th>Unit</th>
                       <th>Status</th>
                       <th>Created At</th>
                       <th> </th>
@@ -243,8 +233,7 @@ const Colors = () => {
                     {data?.map((i, index) => (
                       <tr key={index}>
                         <td> #{index + 1} </td>
-                        <td>{i.color}</td>
-                        <td>{i.colorCode}</td>
+                        <td>{i.unit}</td>
                         <td> {BadgeSelector(i.status)} </td>
                         <td> {i.createdAt?.slice(0, 10)} </td>
                         <td>
@@ -277,4 +266,4 @@ const Colors = () => {
   );
 };
 
-export default HOC(Colors);
+export default HOC(Unit);

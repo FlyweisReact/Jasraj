@@ -42,7 +42,6 @@ import KybView from "./Admin/pages/KYC/KybView";
 import ReturnOrder from "./Admin/pages/Order/ReturnOrder";
 import Ticket from "./Admin/pages/Ticket/Ticket";
 import COD from "./Admin/pages/COD/COD";
-import VReturnOrder from "./Vendor/pages/Order/VReturnOrder";
 // ----------------
 function App() {
   return (
@@ -72,8 +71,7 @@ function App() {
         <Route path="/vendor/colors" element={<Colors />} />
         <Route path="/vendor-order" element={<Order />} />
         <Route path="/vendor/order/:id" element={<ViewOrder />} />
-        <Route path="/vendor/return-order" element={<VReturnOrder />} />
-
+        
         <Route path="/vendor/kyc" element={<VendorKyc />} />
         <Route path="/vendor/kyb" element={<VendorKyb />} />
         <Route path="/admin-login" element={<AdminLogin />} />

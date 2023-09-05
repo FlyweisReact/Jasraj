@@ -94,7 +94,7 @@ const Sidebar = ({ hamb, setHamb }) => {
       {
         icon: <i className="fa-solid fa-bag-shopping  text-xl mr-3 rounded-full"></i>,
         link: "/vendor/return-order",
-        name: "Return Order",
+        name: "Order",
       },
     ];
   } else {

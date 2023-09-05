@@ -267,6 +267,7 @@ const ProductVariant = () => {
       />
 
       <section>
+        <p className="headP">Dashboard / {name} Varients </p>
         <div
           className="pb-4   w-full flex justify-between items-center"
           style={{ width: "98%", marginLeft: "2%" }}
