@@ -65,6 +65,7 @@ const AdminProduct = () => {
         "https://ecommerce-backend-ochre-phi.vercel.app/api/v1/admin/getAllVendor"
       );
       setVendors(data.data);
+      console.log(data.data)
     }catch{}
   }
 

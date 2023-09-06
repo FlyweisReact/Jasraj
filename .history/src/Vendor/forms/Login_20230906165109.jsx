@@ -30,6 +30,7 @@ const Login = () => {
         }
       );
       localStorage.setItem("token", data.data.accessToken);
+      console.log(data)
       localStorage.setItem("AdminName" , email)
       navigate("/dashboard");
       toast.success("Welcome Admin");

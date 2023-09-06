@@ -60,12 +60,7 @@ const AdminProduct = () => {
 
 
   const getVendors = async () => {
-    try{
-      const { data } = await axios.get(
-        "https://ecommerce-backend-ochre-phi.vercel.app/api/v1/admin/getAllVendor"
-      );
-      setVendors(data.data);
-    }catch{}
+    
   }
 
   const fecthCategory = async () => {
@@ -117,7 +112,6 @@ const AdminProduct = () => {
   useEffect(() => {
     fecthCategory();
     fecthSubCategory();
-    getVendors()
   }, []);
 
   const deleteHandler = async (id) => {
@@ -243,10 +237,10 @@ const AdminProduct = () => {
                 style={{ width: "80%" }}
               >
                 <option> </option>
-                {vendors?.map((i, index) => (
+                {categoryArr?.map((i, index) => (
                   <option key={index} value={i._id}>
                     {" "}
-                    {i.fullName}{" "}
+                    {i.name}{" "}
                   </option>
                 ))}
               </select>
